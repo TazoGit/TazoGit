@@ -22,11 +22,10 @@
 body {
     background-color: var(--space-cadet);
     color: white;
-    
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+Cjwvc3ZnPg==');
     padding: 16px 24px;
     min-height: 100vh;
 }
-
 
 header {
     display: flex;
@@ -66,10 +65,9 @@ h1 {
     padding: 5px 0;
 }
 
-.planet-nav a:hover {
+.planet-nav a:hover, .planet-nav a.active {
     color: white;
 }
-
 
 .planet-content {
     display: grid;
@@ -80,20 +78,25 @@ h1 {
     align-items: center;
 }
 
-.planet-image {
+.planet-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.planet-image img {
+.planet-image, .internal-image, .geology-image {
     width: 100%;
-    max-width: 290px;
+    max-width: 400px;
     transition: transform 0.5s;
+    display: none;
 }
 
-.planet-image img:hover {
+.planet-image.active, .internal-image.active, .geology-image.active {
+    display: block;
+}
+
+.planet-image:hover, .internal-image:hover, .geology-image:hover {
     transform: scale(1.05);
 }
 
@@ -131,7 +134,6 @@ h1 {
     text-decoration: underline;
 }
 
-
 .tabs {
     display: flex;
     flex-direction: column;
@@ -155,7 +157,51 @@ h1 {
     color: white;
 }
 
+.tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
+.tab.active {
+    background-color: var(--current-planet-color, var(--mercury));
+    border-color: var(--current-planet-color, var(--mercury));
+}
+
+.tab-number {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 17px;
+    font-weight: 700;
+}
+
+.planet-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.stat {
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-title {
+    font-family: 'Spartan', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-family: 'Antonio', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
 @media (max-width: 768px) {
     .planet-content {
         grid-template-columns: 1fr;
