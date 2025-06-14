@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>The Planets</h1>
+        <nav class="planet-nav">
+            <a href="#" data-planet="mercury" class="active">Mercury</a>
+            <a href="#" data-planet="venus">Venus</a>
+            <a href="#" data-planet="earth">Earth</a>
+            <a href="#" data-planet="mars">Mars</a>
+            <a href="#" data-planet="jupiter">Jupiter</a>
+            <a href="#" data-planet="saturn">Saturn</a>
+            <a href="#" data-planet="uranus">Uranus</a>
+            <a href="#" data-planet="neptune">Neptune</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="planet-content">
+            <div class="planet-image-container">
+                <img class="planet-image active" src="https://chamumutezva.github.io/planets-fact-site/assets/planet-mercury.svg" alt="Mercury">
+                <img class="internal-image" src="https://chamumutezva.github.io/planets-fact-site/assets/planet-mercury-internal.svg" alt="Mercury Internal Structure">
+                <img class="geology-image" src="https://chamumutezva.github.io/planets-fact-site/assets/geology-mercury.png" alt="Mercury Surface Geology" style="width: 160px; top: 180px;">
+            </div>
+            <div class="planet-info">
+                <h2 class="planet-name">Mercury</h2>
+                <p class="planet-description" id="planet-description"></p>
+                <p class="source">
+                    Source: 
+                    <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank" id="planet-source">Wikipedia</a>
+                </p>
+
+                <div class="tabs">
+                    <button class="tab active" data-tab="overview">
+                        <span class="tab-number">01</span> Overview
+                    </button>
+                    <button class="tab" data-tab="structure">
+                        <span class="tab-number">02</span> Internal Structure
+                    </button>
+                    <button class="tab" data-tab="geology">
+                        <span class="tab-number">03</span> Surface Geology
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="planet-stats">
+            <div class="stat">
+                <div class="stat-title">Rotation Time</div>
+                <div class="stat-value" id="rotation-time">58.6 Days</div>
+            </div>
+            <div class="stat">
+                <div class="stat-title">Revolution Time</div>
+                <div class="stat-value" id="revolution-time">87.97 Days</div>
+            </div>
+            <div class="stat">
+                <div class="stat-title">Radius</div>
+                <div class="stat-value" id="radius">2,439.7 Km</div>
+            </div>
+            <div class="stat">
+                <div class="stat-title">Average Temp.</div>
+                <div class="stat-value" id="temperature">430°C</div>
+            </div>
+        </div>
+    </main>
+        <script src="main.js"></script>
+
+        
